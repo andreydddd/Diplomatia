@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,34 +23,61 @@ namespace Diplomatia.Controller
 
         private void BronirovanieControl_Load(object sender, EventArgs e)
         {
-
+           guna2ComboBoxNumber.Enabled = false;
+            guna2GradientButton1.Enabled = false;
+           // FillPassportComboBox();
+           
         }
-        private void guna2TextBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Проверяем, является ли введенный символ цифрой или клавишей Backspace
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+        private void FillPassportComboBox()
+        { 
+            try
             {
-                // Если это не цифра и не Backspace, то отменяем ввод
-                e.Handled = true;
+                // Создаем новое подключение к базе данных
+                using (SqlConnection connection = dataBases.getConnection())
+                {
+                    // Открываем соединение с базой данных
+                    dataBases.OpenConnection();
 
-                // Дополнительно вы можете добавить визуальное отличие, например, изменить цвет рамки
-                guna2TextBoxNumber.BorderColor = Color.Red;
+                    // Создаем запрос к базе данных для получения паспортов из таблицы guest
+                    string query = "SELECT passport FROM guest";
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    // Создаем ридер для выполнения запроса
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Очищаем список перед добавлением новых элементов
+                        guna2ComboBoxPassport.Items.Clear();
+
+                        // Перебираем результаты запроса и добавляем их в ComboBox
+                        while (reader.Read())
+                        {
+                            double passport = reader.GetDouble(0);
+                            guna2ComboBoxPassport.Items.Add(passport.ToString());
+                        }
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // Возвращаем обычный цвет рамки, если ввод корректный
-                guna2TextBoxNumber.BorderColor = Color.Gray;
+                // Обработка ошибок, если они возникли при выполнении запроса
+                MessageBox.Show($"Ошибка при выполнении запроса: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Закрываем соединение с базой данных после выполнения запроса
+                dataBases.closeConnection();
             }
         }
 
 
         private void guna2GradientButtonCreatePrice_Click(object sender, EventArgs e)
         {
+            guna2GradientButton1.Enabled = true;
             // Обнуляем значение guna2TextBoxPrice перед началом нового расчета
             guna2TextBoxPrice.Text = "0";
 
-            // Получаем значение из guna2TextBoxType
-            string typeText = guna2TextBoxType.Text;
+            // Получаем значение из guna2ComboBoxType
+            string typeText = guna2ComboBoxType.SelectedItem.ToString();
 
             // Получаем количество гостей из guna2TextBoxCountGuest
             int countGuest;
@@ -64,13 +92,13 @@ namespace Diplomatia.Controller
             int maxGuests;
             switch (typeText)
             {
-                case "1":
+                case "Стандарт":
                     maxGuests = 2;
                     break;
-                case "2":
+                case "Комфорт":
                     maxGuests = 4;
                     break;
-                case "3":
+                case "Люкс":
                     maxGuests = 6;
                     break;
                 default:
@@ -91,13 +119,13 @@ namespace Diplomatia.Controller
             int pricePerGuest;
             switch (typeText)
             {
-                case "1":
+                case "Стандарт":
                     pricePerGuest = 3000;
                     break;
-                case "2":
+                case "Комфорт":
                     pricePerGuest = 5000;
                     break;
-                case "3":
+                case "Люкс":
                     pricePerGuest = 7500;
                     break;
                 default:
@@ -136,9 +164,11 @@ namespace Diplomatia.Controller
 
 
 
+
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            var nomId = guna2TextBoxNumber.Text;
+            var nomId = guna2ComboBoxNumber.SelectedItem.ToString();
+         //  var guestId = guna2ComboBoxPassport.SelectedItem.ToString();  
             var guestId = guna2TextBoxGuest.Text;
             var countGuest = guna2TextBoxCountGuest.Text;
             var price = guna2TextBoxPrice.Text;
@@ -150,7 +180,8 @@ namespace Diplomatia.Controller
             // Проверяем, есть ли уже бронирование для этого номера на указанные даты
             string checkBookingQuery = $"SELECT COUNT(*) FROM bronirovanie WHERE nomer_id = '{nomId}' " +
                                        $"AND ((date_start >= '{dateStart:yyyy-MM-dd}' AND date_start <= '{dateEnd:yyyy-MM-dd}') " +
-                                       $"OR (date_end >= '{dateStart:yyyy-MM-dd}' AND date_end <= '{dateEnd:yyyy-MM-dd}'))";
+                                       $"OR (date_end >= '{dateStart:yyyy-MM-dd}' AND date_end <= '{dateEnd:yyyy-MM-dd}')" +
+                                       $"OR (date_start <= '{dateStart:yyyy-MM-dd}' AND date_end >= '{dateEnd:yyyy-MM-dd}'))";
 
             SqlCommand checkBookingCommand = new SqlCommand(checkBookingQuery, dataBases.getConnection());
             dataBases.OpenConnection();
@@ -201,6 +232,54 @@ namespace Diplomatia.Controller
             {
                 dataBases.closeConnection();
             }
+        }
+
+
+        private void guna2ComboBoxType_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (guna2ComboBoxType.SelectedItem != null)
+            {
+                string selectedType = guna2ComboBoxType.SelectedItem.ToString();
+                if (selectedType == "Стандарт" || selectedType == "Комфорт" || selectedType == "Люкс")
+                {
+                    // Если тип номера выбран из списка, разрешаем доступ к guna2ComboBoxNumber
+                    guna2ComboBoxNumber.Enabled = true;
+
+                    // Очищаем список номеров
+                    guna2ComboBoxNumber.Items.Clear();
+
+                    // Добавляем соответствующие номера в список в зависимости от выбранного типа
+                    switch (selectedType)
+                    {
+                        case "Стандарт":
+                            guna2ComboBoxNumber.Items.AddRange(new string[] { "Стандарт1", "Стандарт2" });
+                            break;
+                        case "Комфорт":
+                            guna2ComboBoxNumber.Items.AddRange(new string[] { "Комфорт1", "Комфорт2" });
+                            break;
+                        case "Люкс":
+                            guna2ComboBoxNumber.Items.AddRange(new string[] { "Люкс1", "Люкс2" });
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    // Если выбрано неправильное значение, блокируем доступ к guna2ComboBoxNumber
+                    guna2ComboBoxNumber.Enabled = false;
+                }
+            }
+        }
+
+        private void guna2TextBoxGuest_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -44,24 +44,7 @@ namespace Diplomatia
 
         private void PrintUser_Click(object sender, EventArgs e)
         {
-            UserrControl userrControl = new UserrControl();
-            userrControl.Location = new System.Drawing.Point(265, -6);
-            userrControl.Size = new System.Drawing.Size(762, 549);
-            this.Controls.Add(userrControl);
 
-            PrintListUserAdmin(userrControl);
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            UserrControl userrControl = new UserrControl();
-            userrControl.Location = new System.Drawing.Point(265, -6);
-            userrControl.Size = new System.Drawing.Size(738, 538);
-            this.Controls.Add(userrControl);
-            userrControl.BringToFront();
-
-            PrintListUserAdmin(userrControl);
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
@@ -80,8 +63,28 @@ namespace Diplomatia
 
         private void guna2PictureBox4_Click(object sender, EventArgs e)
         {
-            PanelTypeNumber.Visible = false;
             PanelMenu2Item.Location = new Point(5, 153);
+        }
+
+        private void guna2PictureBox2_Click(object sender, EventArgs e)
+        {
+            UserrControl userrControl = new UserrControl();
+            userrControl.Location = new System.Drawing.Point(265, -6);
+            userrControl.Size = new System.Drawing.Size(738, 538);
+            this.Controls.Add(userrControl);
+            userrControl.BringToFront();
+
+            PrintListUserAdmin(userrControl);
+        }
+
+        private void guna2PictureBox3_Click(object sender, EventArgs e)
+        {
+            UslugaControl userrControl = new UslugaControl();
+            userrControl.Location = new System.Drawing.Point(265, -6);
+            userrControl.Size= new System.Drawing.Size(738, 538);
+            this.Controls.Add(userrControl);
+            userrControl.BringToFront();
+
         }
     }
     

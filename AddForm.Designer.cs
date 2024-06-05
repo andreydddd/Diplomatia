@@ -51,7 +51,7 @@
             this.guna2GradientButtonAddPicture.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2GradientButtonAddPicture.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientButtonAddPicture.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButtonAddPicture.Location = new System.Drawing.Point(1, 52);
+            this.guna2GradientButtonAddPicture.Location = new System.Drawing.Point(12, 80);
             this.guna2GradientButtonAddPicture.Name = "guna2GradientButtonAddPicture";
             this.guna2GradientButtonAddPicture.Size = new System.Drawing.Size(209, 48);
             this.guna2GradientButtonAddPicture.TabIndex = 11;

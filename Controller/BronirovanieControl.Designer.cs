@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2TextBoxNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.monthCalendarBron = new System.Windows.Forms.MonthCalendar();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -46,9 +45,20 @@
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2TextBoxType = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2GradientButtonCreatePrice = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2ComboBoxNumber = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2ComboBoxType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2ComboBoxPassport = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse8 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse9 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse10 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.guestBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.guestBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guestBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -56,36 +66,15 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(150, 20);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(199, 20);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(407, 33);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(320, 33);
             this.guna2HtmlLabel1.TabIndex = 12;
-            this.guna2HtmlLabel1.Text = "Бронированре пользователей";
-            // 
-            // guna2TextBoxNumber
-            // 
-            this.guna2TextBoxNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBoxNumber.DefaultText = "";
-            this.guna2TextBoxNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBoxNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBoxNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBoxNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBoxNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxNumber.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBoxNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxNumber.Location = new System.Drawing.Point(398, 69);
-            this.guna2TextBoxNumber.MaxLength = 1;
-            this.guna2TextBoxNumber.Name = "guna2TextBoxNumber";
-            this.guna2TextBoxNumber.PasswordChar = '\0';
-            this.guna2TextBoxNumber.PlaceholderText = "";
-            this.guna2TextBoxNumber.SelectedText = "";
-            this.guna2TextBoxNumber.Size = new System.Drawing.Size(298, 35);
-            this.guna2TextBoxNumber.TabIndex = 13;
+            this.guna2HtmlLabel1.Text = "Бронированре номеров";
             // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 20;
-            this.guna2Elipse1.TargetControl = this.guna2TextBoxNumber;
             // 
             // monthCalendarBron
             // 
@@ -101,11 +90,11 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(12, 69);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(67, 114);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(221, 27);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(171, 27);
             this.guna2HtmlLabel2.TabIndex = 15;
-            this.guna2HtmlLabel2.Text = "Введите адйи номера";
+            this.guna2HtmlLabel2.Text = "Выберите номер";
             // 
             // guna2TextBoxGuest
             // 
@@ -118,25 +107,26 @@
             this.guna2TextBoxGuest.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxGuest.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBoxGuest.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxGuest.Location = new System.Drawing.Point(398, 157);
+            this.guna2TextBoxGuest.Location = new System.Drawing.Point(398, 158);
             this.guna2TextBoxGuest.MaxLength = 50;
             this.guna2TextBoxGuest.Name = "guna2TextBoxGuest";
             this.guna2TextBoxGuest.PasswordChar = '\0';
             this.guna2TextBoxGuest.PlaceholderText = "";
             this.guna2TextBoxGuest.SelectedText = "";
-            this.guna2TextBoxGuest.Size = new System.Drawing.Size(298, 35);
+            this.guna2TextBoxGuest.Size = new System.Drawing.Size(268, 35);
             this.guna2TextBoxGuest.TabIndex = 16;
+            this.guna2TextBoxGuest.TextChanged += new System.EventHandler(this.guna2TextBoxGuest_TextChanged);
             // 
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(12, 150);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(67, 155);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(198, 27);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(160, 27);
             this.guna2HtmlLabel3.TabIndex = 17;
-            this.guna2HtmlLabel3.Text = "Введите адйи гостя";
+            this.guna2HtmlLabel3.Text = "Выберите гостя";
             // 
             // guna2TextBoxCountGuest
             // 
@@ -149,13 +139,13 @@
             this.guna2TextBoxCountGuest.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBoxCountGuest.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBoxCountGuest.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxCountGuest.Location = new System.Drawing.Point(398, 205);
+            this.guna2TextBoxCountGuest.Location = new System.Drawing.Point(398, 232);
             this.guna2TextBoxCountGuest.MaxLength = 1;
             this.guna2TextBoxCountGuest.Name = "guna2TextBoxCountGuest";
             this.guna2TextBoxCountGuest.PasswordChar = '\0';
             this.guna2TextBoxCountGuest.PlaceholderText = "";
             this.guna2TextBoxCountGuest.SelectedText = "";
-            this.guna2TextBoxCountGuest.Size = new System.Drawing.Size(298, 35);
+            this.guna2TextBoxCountGuest.Size = new System.Drawing.Size(268, 35);
             this.guna2TextBoxCountGuest.TabIndex = 18;
             // 
             // guna2Elipse3
@@ -173,7 +163,7 @@
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(12, 198);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(58, 232);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(277, 27);
             this.guna2HtmlLabel4.TabIndex = 19;
@@ -239,7 +229,7 @@
             this.guna2GradientButton1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(169, 468);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(221, 467);
             this.guna2GradientButton1.Name = "guna2GradientButton1";
             this.guna2GradientButton1.Size = new System.Drawing.Size(209, 48);
             this.guna2GradientButton1.TabIndex = 24;
@@ -251,36 +241,15 @@
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2HtmlLabel8.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(12, 110);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(67, 66);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(207, 27);
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(223, 27);
             this.guna2HtmlLabel8.TabIndex = 25;
-            this.guna2HtmlLabel8.Text = "Введите тип номера";
-            // 
-            // guna2TextBoxType
-            // 
-            this.guna2TextBoxType.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBoxType.DefaultText = "";
-            this.guna2TextBoxType.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBoxType.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBoxType.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBoxType.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBoxType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxType.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBoxType.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxType.Location = new System.Drawing.Point(398, 112);
-            this.guna2TextBoxType.MaxLength = 1;
-            this.guna2TextBoxType.Name = "guna2TextBoxType";
-            this.guna2TextBoxType.PasswordChar = '\0';
-            this.guna2TextBoxType.PlaceholderText = "";
-            this.guna2TextBoxType.SelectedText = "";
-            this.guna2TextBoxType.Size = new System.Drawing.Size(298, 35);
-            this.guna2TextBoxType.TabIndex = 26;
+            this.guna2HtmlLabel8.Text = "Выберите тип номера";
             // 
             // guna2Elipse5
             // 
             this.guna2Elipse5.BorderRadius = 20;
-            this.guna2Elipse5.TargetControl = this.guna2TextBoxType;
             // 
             // guna2GradientButtonCreatePrice
             // 
@@ -301,13 +270,96 @@
             this.guna2GradientButtonCreatePrice.Text = "Сформировать цену";
             this.guna2GradientButtonCreatePrice.Click += new System.EventHandler(this.guna2GradientButtonCreatePrice_Click);
             // 
+            // guna2ComboBoxNumber
+            // 
+            this.guna2ComboBoxNumber.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBoxNumber.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBoxNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBoxNumber.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBoxNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBoxNumber.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBoxNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBoxNumber.ItemHeight = 30;
+            this.guna2ComboBoxNumber.Items.AddRange(new object[] {
+            "Стандарт1",
+            "Стандарт2",
+            "Комфорт1",
+            "Комфорт2",
+            "Люкс1",
+            "Люкс2"});
+            this.guna2ComboBoxNumber.Location = new System.Drawing.Point(398, 110);
+            this.guna2ComboBoxNumber.Name = "guna2ComboBoxNumber";
+            this.guna2ComboBoxNumber.Size = new System.Drawing.Size(268, 36);
+            this.guna2ComboBoxNumber.TabIndex = 28;
+            // 
+            // guna2ComboBoxType
+            // 
+            this.guna2ComboBoxType.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBoxType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBoxType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBoxType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBoxType.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBoxType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBoxType.ItemHeight = 30;
+            this.guna2ComboBoxType.Items.AddRange(new object[] {
+            "Стандарт",
+            "Комфорт",
+            "Люкс"});
+            this.guna2ComboBoxType.Location = new System.Drawing.Point(398, 64);
+            this.guna2ComboBoxType.Name = "guna2ComboBoxType";
+            this.guna2ComboBoxType.Size = new System.Drawing.Size(268, 36);
+            this.guna2ComboBoxType.TabIndex = 29;
+            this.guna2ComboBoxType.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBoxType_SelectedIndexChanged_1);
+            // 
+            // guna2ComboBoxPassport
+            // 
+            this.guna2ComboBoxPassport.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBoxPassport.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBoxPassport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBoxPassport.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBoxPassport.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBoxPassport.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBoxPassport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBoxPassport.ItemHeight = 30;
+            this.guna2ComboBoxPassport.Location = new System.Drawing.Point(34, 191);
+            this.guna2ComboBoxPassport.Name = "guna2ComboBoxPassport";
+            this.guna2ComboBoxPassport.Size = new System.Drawing.Size(231, 36);
+            this.guna2ComboBoxPassport.TabIndex = 30;
+            this.guna2ComboBoxPassport.Visible = false;
+            // 
+            // guna2Elipse6
+            // 
+            this.guna2Elipse6.BorderRadius = 20;
+            this.guna2Elipse6.TargetControl = this.guna2ComboBoxNumber;
+            // 
+            // guna2Elipse8
+            // 
+            this.guna2Elipse8.BorderRadius = 20;
+            this.guna2Elipse8.TargetControl = this.guna2ComboBoxType;
+            // 
+            // guna2Elipse9
+            // 
+            this.guna2Elipse9.BorderRadius = 20;
+            this.guna2Elipse9.TargetControl = this.guna2ComboBoxPassport;
+            // 
+            // guestBindingSource
+            // 
+            this.guestBindingSource.DataMember = "guest";
+            // 
+            // guestBindingSource1
+            // 
+            this.guestBindingSource1.DataMember = "guest";
+            // 
             // BronirovanieControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.Controls.Add(this.guna2ComboBoxPassport);
+            this.Controls.Add(this.guna2ComboBoxType);
+            this.Controls.Add(this.guna2ComboBoxNumber);
             this.Controls.Add(this.guna2GradientButtonCreatePrice);
-            this.Controls.Add(this.guna2TextBoxType);
             this.Controls.Add(this.guna2HtmlLabel8);
             this.Controls.Add(this.guna2GradientButton1);
             this.Controls.Add(this.guna2HtmlLabel7);
@@ -319,11 +371,12 @@
             this.Controls.Add(this.guna2TextBoxGuest);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.monthCalendarBron);
-            this.Controls.Add(this.guna2TextBoxNumber);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Name = "BronirovanieControl";
             this.Size = new System.Drawing.Size(740, 545);
             this.Load += new System.EventHandler(this.BronirovanieControl_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.guestBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guestBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,7 +385,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxNumber;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.MonthCalendar monthCalendarBron;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
@@ -348,8 +400,17 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxType;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButtonCreatePrice;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBoxNumber;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBoxType;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBoxPassport;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse8;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse9;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse10;
+        private System.Windows.Forms.BindingSource guestBindingSource;
+        private System.Windows.Forms.BindingSource guestBindingSource1;
     }
 }

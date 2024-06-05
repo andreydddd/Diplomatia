@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -103,6 +103,12 @@
     <Compile Include="Controller\UserrControl.Designer.cs">
       <DependentUpon>UserrControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\UslugaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controller\UslugaControl.Designer.cs">
+      <DependentUpon>UslugaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBases.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\UserrControl.resx">
       <DependentUpon>UserrControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\UslugaControl.resx">
+      <DependentUpon>UslugaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
