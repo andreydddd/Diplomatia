@@ -72,7 +72,7 @@
             this.Controls.Add(this.labelPassport);
             this.Controls.Add(this.labelPhone);
             this.Name = "EIUserControl";
-            this.Size = new System.Drawing.Size(738, 39);
+            this.Size = new System.Drawing.Size(738, 54);
             this.ResumeLayout(false);
             this.PerformLayout();
 

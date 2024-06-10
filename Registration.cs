@@ -36,7 +36,7 @@ namespace Diplomatia
                     if (sqlCommand.ExecuteNonQuery() ==1)
                     {
                         MessageBox.Show("пользователь зарегестрирован");
-                        Authorization au = new Authorization();
+                        AdminMain au = new AdminMain();
                         au.Show();
                         this.Hide();
 
@@ -53,7 +53,7 @@ namespace Diplomatia
 
         private void label3_Click(object sender, EventArgs e)
         {
-            Authorization au = new Authorization();
+            AdminMain au = new AdminMain();
             au.Show();
             this.Hide();    
         }

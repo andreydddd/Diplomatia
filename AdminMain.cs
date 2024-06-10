@@ -14,10 +14,12 @@ namespace Diplomatia
 {
     public partial class AdminMain : Form
     {
+        
         DataBases dataBases = new DataBases();
         public AdminMain()
         {
             InitializeComponent();
+            
         }
 
         private void PrintListUserAdmin(UserrControl userControl)
@@ -85,6 +87,28 @@ namespace Diplomatia
             this.Controls.Add(userrControl);
             userrControl.BringToFront();
 
+        }
+
+        private void guna2PictureBox4_Click_1(object sender, EventArgs e)
+        {
+            Registration rg = new Registration();
+            rg.Show();
+            this.Hide();
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            Registration registration = new Registration();
+            registration.Show();
+            this.Hide();
+
+        }
+
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Hide();
         }
     }
     

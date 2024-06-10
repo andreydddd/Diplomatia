@@ -70,7 +70,7 @@
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(320, 33);
             this.guna2HtmlLabel1.TabIndex = 12;
-            this.guna2HtmlLabel1.Text = "Бронированре номеров";
+            this.guna2HtmlLabel1.Text = "Бронирование номеров";
             // 
             // guna2Elipse1
             // 
@@ -124,9 +124,9 @@
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(67, 155);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(160, 27);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(207, 27);
             this.guna2HtmlLabel3.TabIndex = 17;
-            this.guna2HtmlLabel3.Text = "Выберите гостя";
+            this.guna2HtmlLabel3.Text = "Напишите имя гостя";
             // 
             // guna2TextBoxCountGuest
             // 

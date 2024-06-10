@@ -21,7 +21,12 @@ namespace Diplomatia
             InitializeComponent();
             
         }
-     
+        public static class CurrentUser
+        {
+            public static int GuestId { get; set; }
+        }
+
+
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             var number = guna2TextBox1.Text;
@@ -30,7 +35,7 @@ namespace Diplomatia
 
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
-            string querystring = $"select number_phone, fio, passport, role from guest where number_phone = '{number}' and fio ='{fio}' and passport = '{passport}' ";
+            string querystring = $"select guet_id, number_phone, fio, passport, role from guest where number_phone = '{number}' and fio ='{fio}' and passport = '{passport}' ";
 
             SqlCommand command = new SqlCommand(querystring, dataBases.getConnection());
 
@@ -39,7 +44,12 @@ namespace Diplomatia
 
             if (table.Rows.Count == 1)
             {
+                int guestId = Convert.ToInt32(table.Rows[0]["guet_id"]);
                 int role = Convert.ToInt32(table.Rows[0]["role"]);
+
+                // Сохраняем guestId в статическом классе
+                CurrentUser.GuestId = guestId;
+                
                 switch (role)
                 {
                     case 1:
@@ -51,7 +61,7 @@ namespace Diplomatia
 
                     case 2:
                         MessageBox.Show("вы вошли как администратор");
-                        AdminMain mne = new AdminMain();
+                        Registration mne = new Registration();
                         mne.Show();
                         this.Hide();
                         break;
