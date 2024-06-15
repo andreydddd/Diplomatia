@@ -41,13 +41,13 @@ namespace Diplomatia
 
         private void ShowBookingInfo(InfoBron infoBron)
         {
-            int guestId = CurrentUser.GuestId; // Получаем идентификатор текущего пользователя
+            string fio = CurrentUser.Fio; // Получаем FIO текущего пользователя
             dataBases.OpenConnection();
 
-            // Запрос с фильтрацией по guest_id
-            string query = "SELECT * FROM bronirovanie WHERE guest_id = @guest_id";
+            // Запрос с фильтрацией по fio
+            string query = "SELECT * FROM bronirovanie WHERE guest_id = @fio";
             SqlCommand sqlCommand = new SqlCommand(query, dataBases.getConnection());
-            sqlCommand.Parameters.AddWithValue("@guest_id", guestId);
+            sqlCommand.Parameters.AddWithValue("@fio", fio);
             SqlDataReader reader = sqlCommand.ExecuteReader();
 
             if (reader.Read())
@@ -58,6 +58,28 @@ namespace Diplomatia
                 infoBron.labeldateEnd.Text = reader.GetDateTime(4).ToString("yyyy-MM-dd"); // Дата окончания
                 infoBron.labelCountChel.Text = reader[5].ToString(); // Количество человек
                 infoBron.labelPrice.Text = reader[6].ToString(); // Цена
+
+                // Условное добавление StandartControl
+                if (infoBron.labelNomer.Text == "Стандарт1" || infoBron.labelNomer.Text == "Стандарт2")
+                {
+                    StandartControl standartControl = new StandartControl();
+                    infoBron.AddStandartControl(standartControl);
+                }
+
+                infoBron.Show();
+                if (infoBron.labelNomer.Text == "Комфорт1" || infoBron.labelNomer.Text == "Комфорт2")
+                {
+                    KomfortControl komfortControl = new KomfortControl();
+                    infoBron.AddKomfortControl(komfortControl);
+                }
+
+                infoBron.Show();
+
+                if (infoBron.labelNomer.Text == "Люкс1" || infoBron.labelNomer.Text == "Люкс2")
+                {
+                    LuksControl luksControl = new LuksControl();
+                    infoBron.AddLuksControl(luksControl);
+                }
 
                 infoBron.Show();
             }
@@ -70,11 +92,12 @@ namespace Diplomatia
             dataBases.closeConnection();
         }
 
+
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
             InfoBron infoBron = new InfoBron();
             infoBron.Size = new Size(996, 514);
-            infoBron.Location = new Point(0, 178);
+            infoBron.Location = new Point(0, 150);
             this.Controls.Add(infoBron);
 
             infoBron.BringToFront();

@@ -49,7 +49,7 @@ namespace Diplomatia
         {
             UslugaShowControl usluga = new UslugaShowControl();
             usluga.Location = new Point(0, 188);
-            usluga.Size = new Size(977, 483);
+            usluga.Size = new Size(967, 643);
             this.Controls.Add(usluga);
 
             usluga.BringToFront();

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms.ToolTips;
 using GMap.NET.WindowsForms;
+using Diplomatia.MapControl;
 
 namespace Diplomatia
 {
@@ -38,15 +39,13 @@ namespace Diplomatia
             gMapControl1.Zoom = 15;
             gMapControl1.Position = new PointLatLng(56.419333, 40.448757);
             gMapControl1.ShowCenter = false;
-            gMapControl1.OnMarkerClick += new MarkerClick(gMapControl1_OnMarkerClick); // Добавляем событие клика по маркеру
+            gMapControl1.OnMarkerClick += new MarkerClick(gMapControl1_OnMarkerClick); 
             Createmarker();
         }
-
         private void Createmarker()
         {
             GMapOverlay ListOfPlace = new GMapOverlay("Hotel");
 
-            // Метка для "Ризоположенский женский монастырь"
             Bitmap originalImage = new Bitmap(Properties.Resources.monastyr);
             images.Add(originalImage);
             int newWidth = (int)(originalImage.Width * 0.1);
@@ -58,7 +57,6 @@ namespace Diplomatia
             marker1.Tag = "Ризоположенский женский монастырь";
             ListOfPlace.Markers.Add(marker1);
 
-            // Метка для "Парк 950-летия города Суздаля"
             Bitmap parkImage = new Bitmap(Properties.Resources.park);
             images.Add(parkImage);
             newWidth = (int)(parkImage.Width * 0.1);
@@ -70,11 +68,11 @@ namespace Diplomatia
             marker2.Tag = "Парк 950-летия города Суздаля";
             ListOfPlace.Markers.Add(marker2);
 
-            // Метка для "Суздальский Кремль"
-            Bitmap kremlinImage = new Bitmap(Properties.Resources.monastyr);
+            
+            Bitmap kremlinImage = new Bitmap(Properties.Resources.Hram);
             images.Add(kremlinImage);
-            newWidth = (int)(kremlinImage.Width * 0.1);
-            newHeight = (int)(kremlinImage.Height * 0.1);
+            newWidth = (int)(kremlinImage.Width * 0.08);
+            newHeight = (int)(kremlinImage.Height * 0.08);
             Bitmap resizedKremlinImage = new Bitmap(kremlinImage, new Size(newWidth, newHeight));
             GMarkerGoogle marker3 = new GMarkerGoogle(new PointLatLng(56.416562, 40.443367), resizedKremlinImage);
             marker3.ToolTip = new GMapRoundedToolTip(marker3);
@@ -93,6 +91,17 @@ namespace Diplomatia
             marker4.Tag = "Точка питания";
             ListOfPlace.Markers.Add(marker4);
 
+            Bitmap eatImage2 = new Bitmap(Properties.Resources.eat);
+            images.Add(eatImage2);
+            newWidth = (int)(eatImage2.Width * 0.1);
+            newHeight = (int)(eatImage2.Height * 0.1);
+            Bitmap resizedEatImage123 = new Bitmap(eatImage2, new Size(newWidth, newHeight));
+            GMarkerGoogle marker123 = new GMarkerGoogle(new PointLatLng(56.418226, 40.445467), resizedEatImage123);
+            marker123.ToolTip = new GMapRoundedToolTip(marker123);
+            marker123.ToolTipText = "Точка питания";
+            marker123.Tag = "Точка питания";
+            ListOfPlace.Markers.Add(marker123);
+
             Bitmap eatImage1 = new Bitmap(Properties.Resources.eat);
             images.Add(eatImage);
             newWidth = (int)(eatImage1.Width * 0.1);
@@ -104,41 +113,105 @@ namespace Diplomatia
             marker5.Tag = "Точка питания";
             ListOfPlace.Markers.Add(marker5);
 
+            
             GMarkerGoogle marker11 = new GMarkerGoogle(new PointLatLng(56.421713, 40.453760), GMarkerGoogleType.red);
             marker11.ToolTip = new GMapRoundedToolTip(marker11);
             marker11.ToolTipText = "Местоположение Отеля";
+            marker11.Tag = "Местоположение Отеля";
             ListOfPlace.Markers.Add(marker11);
+
+            Bitmap soborImage = new Bitmap(Properties.Resources.soborn);
+            images.Add(soborImage);
+            newWidth = (int)(soborImage.Width * 0.06);
+            newHeight = (int)(soborImage.Height * 0.06);
+            Bitmap resizedSoborImage = new Bitmap(soborImage, new Size(newWidth, newHeight));
+            GMarkerGoogle marker12 = new GMarkerGoogle(new PointLatLng(56.429056, 40.437234), resizedSoborImage);
+            marker12.ToolTip = new GMapRoundedToolTip(marker12);
+            marker12.ToolTipText = "Покровский собор";
+            marker12.Tag = "Покровский собор";
+            ListOfPlace.Markers.Add(marker12);
+
+           
+            Bitmap museiImage = new Bitmap(Properties.Resources.ms);
+            images.Add(museiImage);
+            newWidth = (int)(museiImage.Width * 0.1);
+            newHeight = (int)(museiImage.Height * 0.1);
+            Bitmap resizedMuseiImage = new Bitmap(museiImage, new Size(newWidth, newHeight));
+            GMarkerGoogle marker13 = new GMarkerGoogle(new PointLatLng(56.425084, 40.439253), resizedMuseiImage);
+            marker13.ToolTip = new GMapRoundedToolTip(marker13);
+            marker13.ToolTipText = "Ларец";
+            marker13.Tag = "Ларец";
+            ListOfPlace.Markers.Add(marker13);
 
             gMapControl1.Overlays.Add(ListOfPlace);
         }
 
+
         private void gMapControl1_OnMarkerClick(GMapMarker item, MouseEventArgs e)
         {
+            HotelControl hotelControl = new HotelControl();
+            MonastyrControl monastyrControl = new MonastyrControl();
+           ChurchControl churchControl = new ChurchControl();
+            ParkControl parkControl = new ParkControl();
+            SoborControl soborControl = new SoborControl();
+            MusemControl musemControl = new MusemControl();
+
             if (item.Tag != null)
             {
                 string tag = item.Tag.ToString();
                 if (tag == "Ризоположенский женский монастырь")
                 {
-                    panel1.Visible = true;
-                    panel2.Visible = false;
-                    panel3.Visible = false;
+                    monastyrControl.Location = new Point(317, 111);
+                    monastyrControl.Size = new Size(446, 453);
+                    this.Controls.Add(monastyrControl);
+                    monastyrControl.BringToFront();
                 }
                 else if (tag == "Парк 950-летия города Суздаля")
                 {
-                    panel2.Visible = true;
-                    panel1.Visible = false;
-                    panel3.Visible = false;
+                    parkControl.Location = new Point(317, 111);
+                    parkControl.Size = new Size(446, 453);
+                    this.Controls.Add(parkControl);
+                    parkControl.BringToFront();
                 }
                 else if (tag == "Суздальский Кремль")
                 {
-                    panel3.Visible = true;
-                    panel1.Visible = false;
-                    panel2.Visible = false;
+                    churchControl.Location = new Point(317, 111);
+                    churchControl.Size = new Size(446, 453);
+                    this.Controls.Add(churchControl);
+                    churchControl.BringToFront();
+                }
+                else if (tag == "Местоположение Отеля")
+                {
+                    hotelControl.Location = new Point(317, 111);
+                    hotelControl.Size = new Size(446, 453);
+                    this.Controls.Add(hotelControl); 
+                    hotelControl.BringToFront();
+                }
+                else if (tag == "Покровский собор")
+                {
+                    soborControl.Location = new Point(317, 111);
+                    soborControl.Size = new Size(446, 453);
+                    this.Controls.Add(soborControl);
+                    soborControl.BringToFront();
+                }
+                else if (tag == "Ларец")
+                {
+                    musemControl.Location = new Point(317, 111);
+                    musemControl.Size = new Size(446, 453);
+                    this.Controls.Add(musemControl);
+                    musemControl.BringToFront();
                 }
             }
         }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Hide();
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
             Main main = new Main();
             main.Show();

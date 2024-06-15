@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AxWMPLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,10 @@ namespace Diplomatia
             timer.Interval = 1000; // 1 секунда
             timer.Tick += Timer_Tick;
             timer.Start();
+
+            axWindowsMediaPlayer1.URL = @"E:\фотк\sunflower\vidi.mp4";
+            axWindowsMediaPlayer1.settings.volume = 0;
+            axWindowsMediaPlayer1.Ctlcontrols.play();
         }
         private Timer timer;
         private void Timer_Tick(object sender, EventArgs e)
@@ -32,6 +37,11 @@ namespace Diplomatia
             Main main = new Main();
             main.Show();
             this.Hide();
+        }
+
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

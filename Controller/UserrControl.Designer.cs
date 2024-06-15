@@ -31,30 +31,18 @@
             this.components = new System.ComponentModel.Container();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.labelCount = new System.Windows.Forms.Label();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(-8, 55);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(713, 482);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(735, 482);
             this.flowLayoutPanel1.TabIndex = 15;
-            // 
-            // labelCount
-            // 
-            this.labelCount.AutoSize = true;
-            this.labelCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCount.ForeColor = System.Drawing.Color.White;
-            this.labelCount.Location = new System.Drawing.Point(336, 551);
-            this.labelCount.Name = "labelCount";
-            this.labelCount.Size = new System.Drawing.Size(12, 20);
-            this.labelCount.TabIndex = 16;
-            this.labelCount.Text = "l";
             // 
             // guna2HtmlLabel1
             // 
@@ -89,30 +77,17 @@
             this.guna2HtmlLabel3.TabIndex = 19;
             this.guna2HtmlLabel3.Text = "Паспорт:";
             // 
-            // guna2VScrollBar1
-            // 
-            this.guna2VScrollBar1.InUpdate = false;
-            this.guna2VScrollBar1.LargeChange = 10;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(704, 55);
-            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.ScrollbarSize = 26;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(26, 482);
-            this.guna2VScrollBar1.TabIndex = 20;
-            this.guna2VScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.guna2VScrollBar1_Scroll);
-            // 
             // UserrControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
-            this.Controls.Add(this.guna2VScrollBar1);
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2HtmlLabel1);
-            this.Controls.Add(this.labelCount);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UserrControl";
-            this.Size = new System.Drawing.Size(730, 672);
+            this.Size = new System.Drawing.Size(730, 541);
             this.Load += new System.EventHandler(this.UserrControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -122,10 +97,8 @@
         #endregion
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        public System.Windows.Forms.Label labelCount;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
     }
 }

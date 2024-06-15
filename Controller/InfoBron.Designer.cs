@@ -86,7 +86,7 @@
             this.labelCountChel.BackColor = System.Drawing.Color.Transparent;
             this.labelCountChel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelCountChel.ForeColor = System.Drawing.Color.White;
-            this.labelCountChel.Location = new System.Drawing.Point(32, 128);
+            this.labelCountChel.Location = new System.Drawing.Point(29, 108);
             this.labelCountChel.Name = "labelCountChel";
             this.labelCountChel.Size = new System.Drawing.Size(148, 31);
             this.labelCountChel.TabIndex = 4;
@@ -97,7 +97,7 @@
             this.labelPrice.BackColor = System.Drawing.Color.Transparent;
             this.labelPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelPrice.ForeColor = System.Drawing.Color.White;
-            this.labelPrice.Location = new System.Drawing.Point(191, 128);
+            this.labelPrice.Location = new System.Drawing.Point(188, 108);
             this.labelPrice.Name = "labelPrice";
             this.labelPrice.Size = new System.Drawing.Size(64, 31);
             this.labelPrice.TabIndex = 5;

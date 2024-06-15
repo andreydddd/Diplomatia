@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI;
 using System.Windows.Forms;
 
 namespace Diplomatia
@@ -18,6 +19,8 @@ namespace Diplomatia
         DataBases dataBases = new DataBases();
         public AdminMain()
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
+
             InitializeComponent();
             
         }
@@ -42,6 +45,27 @@ namespace Diplomatia
             reader.Close();
             dataBases.closeConnection();
 
+        }
+
+        private void PrintListZayavki (ZayavkaControl zayavkaControl)
+        {
+            dataBases.OpenConnection();
+            SqlCommand sqlCommand = new SqlCommand("select * from [zayavki]", dataBases.getConnection());
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            zayavkaControl.flowLayoutPanel1.Controls.Clear();
+            while (reader.Read())
+            {
+                EIZayavki item = new EIZayavki();
+                item.guna2HtmlLabelFio.Text += reader[1].ToString();
+                item.guna2HtmlLabelPhone.Text += reader[2].ToString();
+                item.guna2HtmlLabelNomer.Text += reader[3].ToString();
+                item.guna2HtmlLabelDateS.Text = reader.GetDateTime(4).ToString("yyyy-MM-dd");
+                item.guna2HtmlLabelDateN.Text = reader.GetDateTime(5).ToString("yyyy-MM-dd");
+                item.guna2HtmlLabelCount.Text += reader[6].ToString();
+                zayavkaControl.flowLayoutPanel1.Controls.Add(item);
+            }
+            reader.Close();
+            dataBases.closeConnection();
         }
 
         private void PrintUser_Click(object sender, EventArgs e)
@@ -89,26 +113,37 @@ namespace Diplomatia
 
         }
 
-        private void guna2PictureBox4_Click_1(object sender, EventArgs e)
-        {
-            Registration rg = new Registration();
-            rg.Show();
-            this.Hide();
-        }
-
-        private void guna2GradientButton1_Click(object sender, EventArgs e)
-        {
-            Registration registration = new Registration();
-            registration.Show();
-            this.Hide();
-
-        }
-
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
             Main main = new Main();
             main.Show();
             this.Hide();
+        }
+
+        private void guna2PictureBox4_Click_2(object sender, EventArgs e)
+        {
+            RegistrationControl rg = new RegistrationControl();
+            rg.Location = new System.Drawing.Point(265, -6);
+            rg.Size = new System.Drawing.Size(738,587);
+            this.Controls.Add(rg);
+
+            rg.BringToFront();
+        }
+
+        private void guna2PictureBox5_Click(object sender, EventArgs e)
+        {
+            ZayavkaControl zayavkaControl = new ZayavkaControl();
+            zayavkaControl.Location = new System.Drawing.Point(265, -6);
+            zayavkaControl.Size = new System.Drawing.Size(730, 541);
+            this.Controls.Add(zayavkaControl);
+            zayavkaControl.BringToFront();
+
+            PrintListZayavki(zayavkaControl);
+        }
+
+        private void guna2PictureBox6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
     

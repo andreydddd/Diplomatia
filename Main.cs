@@ -23,14 +23,14 @@ namespace Diplomatia
         {
             this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
-            pictureBoxes = new Guna.UI2.WinForms.Guna2PictureBox[] { guna2PictureBox1, guna2PictureBox2, guna2PictureBox3, guna2PictureBox4 };
+            pictureBoxes = new Guna.UI2.WinForms.Guna2PictureBox[] { guna2PictureBox1, guna2PictureBox2, guna2PictureBox3, guna2PictureBox4,guna2PictureBox7 };
 
             foreach (var pb in pictureBoxes)
             {
                 flowLayoutPanel1.Controls.Add(pb);
             }
-            // Показать только первые три PictureBox
-            pictureBoxes.Take(3).ToList().ForEach(p => p.Visible = true);
+            // Показать PictureBox
+            pictureBoxes.Take(4).ToList().ForEach(p => p.Visible = true);
 
             timer = new Timer();
             timer.Interval = 1000; // 1 секунда
@@ -40,30 +40,39 @@ namespace Diplomatia
             guna2PictureBox2.Controls.Add(guna2HtmlLabel1);
             guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            guna2HtmlLabel1.Location = new System.Drawing.Point(10, guna2PictureBox2.Height - 65); // Отступ 10 пикселей от левого края и 40 пикселей от нижнего края
+            guna2HtmlLabel1.Location = new System.Drawing.Point(10, guna2PictureBox2.Height - 65);
             guna2HtmlLabel1.AutoSize = true; // Автоматический размер для текста
             guna2HtmlLabel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
 
             guna2PictureBox1.Controls.Add(guna2HtmlLabel2);
             guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
-            guna2HtmlLabel2.Location = new System.Drawing.Point(1, guna2PictureBox1.Height - 65); // Отступ 10 пикселей от левого края и 40 пикселей от нижнего края
+            guna2HtmlLabel2.Location = new System.Drawing.Point(1, guna2PictureBox1.Height - 65); 
             guna2HtmlLabel2.AutoSize = true; // Автоматический размер для текста
             guna2HtmlLabel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
 
             guna2PictureBox3.Controls.Add(guna2HtmlLabel3);
             guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             guna2HtmlLabel3.ForeColor = System.Drawing.Color.White;
-            guna2HtmlLabel3.Location = new System.Drawing.Point(5, guna2PictureBox3.Height - 65); // Отступ 10 пикселей от левого края и 40 пикселей от нижнего края
+            guna2HtmlLabel3.Location = new System.Drawing.Point(5, guna2PictureBox3.Height - 65); 
             guna2HtmlLabel3.AutoSize = true; // Автоматический размер для текста
             guna2HtmlLabel3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
 
             guna2PictureBox4.Controls.Add(guna2HtmlLabel4);
             guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             guna2HtmlLabel4.ForeColor = System.Drawing.Color.White;
-            guna2HtmlLabel4.Location = new System.Drawing.Point(5, guna2PictureBox4.Height - 65); // Отступ 10 пикселей от левого края и 40 пикселей от нижнего края
+            guna2HtmlLabel4.Location = new System.Drawing.Point(5, guna2PictureBox4.Height - 65); 
             guna2HtmlLabel4.AutoSize = true; // Автоматический размер для текста
             guna2HtmlLabel4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+
+            guna2PictureBox7.Controls.Add(guna2HtmlLabel5);
+            guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            guna2HtmlLabel5.ForeColor = System.Drawing.Color.White;
+            guna2HtmlLabel5.Location = new System.Drawing.Point(5, guna2PictureBox7.Height - 65); 
+            guna2HtmlLabel5.AutoSize = true; // Автоматический размер для текста
+            guna2HtmlLabel5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+
+
 
         }
 
@@ -98,7 +107,6 @@ namespace Diplomatia
             }
             pictureBoxes[0] = lastPictureBox;
 
-            // Обновить расположение PictureBox в FlowLayoutPanel
             flowLayoutPanel1.Controls.Clear();
             foreach (var pb in pictureBoxes)
             {
@@ -136,6 +144,30 @@ namespace Diplomatia
         {
             BronirovanieInfo bronirovanieInfo = new BronirovanieInfo();
             bronirovanieInfo.Show();
+            this.Hide();
+        }
+
+        private void guna2PictureBox6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void guna2HtmlLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox7_Click(object sender, EventArgs e)
+        {
+            Zayavki zayavki = new Zayavki();
+            zayavki.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminMain adminMain = new AdminMain();
+            adminMain.Show();
             this.Hide();
         }
     }

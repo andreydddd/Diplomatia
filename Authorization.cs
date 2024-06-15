@@ -24,6 +24,7 @@ namespace Diplomatia
         public static class CurrentUser
         {
             public static int GuestId { get; set; }
+            public static string Fio { get; set; }
         }
 
 
@@ -45,11 +46,13 @@ namespace Diplomatia
             if (table.Rows.Count == 1)
             {
                 int guestId = Convert.ToInt32(table.Rows[0]["guet_id"]);
+                string userFio = table.Rows[0]["fio"].ToString();
                 int role = Convert.ToInt32(table.Rows[0]["role"]);
 
-                // Сохраняем guestId в статическом классе
+                // Сохраняем guestId и fio в статическом классе CurrentUser
                 CurrentUser.GuestId = guestId;
-                
+                CurrentUser.Fio = userFio;
+
                 switch (role)
                 {
                     case 1:
@@ -61,7 +64,7 @@ namespace Diplomatia
 
                     case 2:
                         MessageBox.Show("вы вошли как администратор");
-                        Registration mne = new Registration();
+                        AdminMain mne = new AdminMain();
                         mne.Show();
                         this.Hide();
                         break;
@@ -75,9 +78,7 @@ namespace Diplomatia
 
         private void label1_Click(object sender, EventArgs e)
         {
-            Registration rg = new Registration();   
-            rg.Show();
-            this.Hide();
+          
         }
     }
 }

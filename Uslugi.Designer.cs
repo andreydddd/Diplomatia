@@ -34,7 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -106,21 +105,12 @@
             this.guna2GradientButton2.Text = "Показать все услуги";
             this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
             // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(-1, 592);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(977, 224);
-            this.guna2Panel1.TabIndex = 25;
-            // 
             // Uslugi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(975, 813);
-            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2GradientButton2);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.label1);
@@ -140,6 +130,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelTime;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }

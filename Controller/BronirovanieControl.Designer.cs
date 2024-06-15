@@ -49,7 +49,6 @@
             this.guna2GradientButtonCreatePrice = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2ComboBoxNumber = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2ComboBoxType = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ComboBoxPassport = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse8 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -219,6 +218,8 @@
             // 
             // guna2GradientButton1
             // 
+            this.guna2GradientButton1.AutoRoundedCorners = true;
+            this.guna2GradientButton1.BorderRadius = 23;
             this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -227,7 +228,7 @@
             this.guna2GradientButton1.FillColor = System.Drawing.Color.DarkGreen;
             this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2GradientButton1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold);
             this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButton1.Location = new System.Drawing.Point(221, 467);
             this.guna2GradientButton1.Name = "guna2GradientButton1";
@@ -253,6 +254,8 @@
             // 
             // guna2GradientButtonCreatePrice
             // 
+            this.guna2GradientButtonCreatePrice.AutoRoundedCorners = true;
+            this.guna2GradientButtonCreatePrice.BorderRadius = 34;
             this.guna2GradientButtonCreatePrice.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2GradientButtonCreatePrice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2GradientButtonCreatePrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -261,7 +264,7 @@
             this.guna2GradientButtonCreatePrice.FillColor = System.Drawing.Color.DarkGreen;
             this.guna2GradientButtonCreatePrice.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2GradientButtonCreatePrice.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2GradientButtonCreatePrice.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButtonCreatePrice.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold);
             this.guna2GradientButtonCreatePrice.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButtonCreatePrice.Location = new System.Drawing.Point(12, 300);
             this.guna2GradientButtonCreatePrice.Name = "guna2GradientButtonCreatePrice";
@@ -312,22 +315,6 @@
             this.guna2ComboBoxType.TabIndex = 29;
             this.guna2ComboBoxType.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBoxType_SelectedIndexChanged_1);
             // 
-            // guna2ComboBoxPassport
-            // 
-            this.guna2ComboBoxPassport.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBoxPassport.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBoxPassport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBoxPassport.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBoxPassport.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBoxPassport.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBoxPassport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBoxPassport.ItemHeight = 30;
-            this.guna2ComboBoxPassport.Location = new System.Drawing.Point(34, 191);
-            this.guna2ComboBoxPassport.Name = "guna2ComboBoxPassport";
-            this.guna2ComboBoxPassport.Size = new System.Drawing.Size(231, 36);
-            this.guna2ComboBoxPassport.TabIndex = 30;
-            this.guna2ComboBoxPassport.Visible = false;
-            // 
             // guna2Elipse6
             // 
             this.guna2Elipse6.BorderRadius = 20;
@@ -341,7 +328,6 @@
             // guna2Elipse9
             // 
             this.guna2Elipse9.BorderRadius = 20;
-            this.guna2Elipse9.TargetControl = this.guna2ComboBoxPassport;
             // 
             // guestBindingSource
             // 
@@ -356,7 +342,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
-            this.Controls.Add(this.guna2ComboBoxPassport);
             this.Controls.Add(this.guna2ComboBoxType);
             this.Controls.Add(this.guna2ComboBoxNumber);
             this.Controls.Add(this.guna2GradientButtonCreatePrice);
@@ -404,7 +389,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButtonCreatePrice;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBoxNumber;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBoxType;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBoxPassport;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse8;

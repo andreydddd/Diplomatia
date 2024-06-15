@@ -25,48 +25,8 @@ namespace Diplomatia.Controller
         {
            guna2ComboBoxNumber.Enabled = false;
             guna2GradientButton1.Enabled = false;
-           // FillPassportComboBox();
+          
            
-        }
-        private void FillPassportComboBox()
-        { 
-            try
-            {
-                // Создаем новое подключение к базе данных
-                using (SqlConnection connection = dataBases.getConnection())
-                {
-                    // Открываем соединение с базой данных
-                    dataBases.OpenConnection();
-
-                    // Создаем запрос к базе данных для получения паспортов из таблицы guest
-                    string query = "SELECT passport FROM guest";
-                    SqlCommand command = new SqlCommand(query, connection);
-
-                    // Создаем ридер для выполнения запроса
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        // Очищаем список перед добавлением новых элементов
-                        guna2ComboBoxPassport.Items.Clear();
-
-                        // Перебираем результаты запроса и добавляем их в ComboBox
-                        while (reader.Read())
-                        {
-                            double passport = reader.GetDouble(0);
-                            guna2ComboBoxPassport.Items.Add(passport.ToString());
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Обработка ошибок, если они возникли при выполнении запроса
-                MessageBox.Show($"Ошибка при выполнении запроса: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                // Закрываем соединение с базой данных после выполнения запроса
-                dataBases.closeConnection();
-            }
         }
 
 
