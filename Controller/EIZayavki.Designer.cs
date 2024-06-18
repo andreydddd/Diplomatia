@@ -54,6 +54,7 @@
             this.guna2HtmlLabelFio.Name = "guna2HtmlLabelFio";
             this.guna2HtmlLabelFio.Size = new System.Drawing.Size(3, 2);
             this.guna2HtmlLabelFio.TabIndex = 0;
+            this.guna2HtmlLabelFio.Text = null;
             // 
             // guna2HtmlLabelPhone
             // 
@@ -64,6 +65,7 @@
             this.guna2HtmlLabelPhone.Name = "guna2HtmlLabelPhone";
             this.guna2HtmlLabelPhone.Size = new System.Drawing.Size(3, 2);
             this.guna2HtmlLabelPhone.TabIndex = 1;
+            this.guna2HtmlLabelPhone.Text = null;
             // 
             // guna2HtmlLabelNomer
             // 
@@ -74,6 +76,7 @@
             this.guna2HtmlLabelNomer.Name = "guna2HtmlLabelNomer";
             this.guna2HtmlLabelNomer.Size = new System.Drawing.Size(3, 2);
             this.guna2HtmlLabelNomer.TabIndex = 2;
+            this.guna2HtmlLabelNomer.Text = null;
             // 
             // guna2HtmlLabelDateS
             // 
@@ -84,6 +87,7 @@
             this.guna2HtmlLabelDateS.Name = "guna2HtmlLabelDateS";
             this.guna2HtmlLabelDateS.Size = new System.Drawing.Size(3, 2);
             this.guna2HtmlLabelDateS.TabIndex = 3;
+            this.guna2HtmlLabelDateS.Text = null;
             // 
             // guna2HtmlLabelDateN
             // 
@@ -94,6 +98,7 @@
             this.guna2HtmlLabelDateN.Name = "guna2HtmlLabelDateN";
             this.guna2HtmlLabelDateN.Size = new System.Drawing.Size(3, 2);
             this.guna2HtmlLabelDateN.TabIndex = 4;
+            this.guna2HtmlLabelDateN.Text = null;
             // 
             // guna2HtmlLabelCount
             // 
@@ -104,6 +109,7 @@
             this.guna2HtmlLabelCount.Name = "guna2HtmlLabelCount";
             this.guna2HtmlLabelCount.Size = new System.Drawing.Size(3, 2);
             this.guna2HtmlLabelCount.TabIndex = 5;
+            this.guna2HtmlLabelCount.Text = null;
             // 
             // guna2GradientPanel1
             // 

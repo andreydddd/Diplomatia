@@ -36,11 +36,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2PictureBoxUsluga = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2GradientButtonShowUsluga = new Guna.UI2.WinForms.Guna2GradientButton();
             this.labelName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2DateTimePickerBronUslug = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2GradientButtonZapis = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2GradientButtonShowUsluga = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBoxUsluga)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelSeans
@@ -135,34 +137,13 @@
             this.guna2PictureBoxUsluga.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBoxUsluga.BorderRadius = 25;
             this.guna2PictureBoxUsluga.ImageRotate = 0F;
-            this.guna2PictureBoxUsluga.Location = new System.Drawing.Point(556, 58);
+            this.guna2PictureBoxUsluga.Location = new System.Drawing.Point(546, 58);
             this.guna2PictureBoxUsluga.Name = "guna2PictureBoxUsluga";
-            this.guna2PictureBoxUsluga.Size = new System.Drawing.Size(295, 242);
+            this.guna2PictureBoxUsluga.Size = new System.Drawing.Size(305, 251);
             this.guna2PictureBoxUsluga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBoxUsluga.TabIndex = 0;
             this.guna2PictureBoxUsluga.TabStop = false;
             this.guna2PictureBoxUsluga.UseTransparentBackground = true;
-            // 
-            // guna2GradientButtonShowUsluga
-            // 
-            this.guna2GradientButtonShowUsluga.AutoRoundedCorners = true;
-            this.guna2GradientButtonShowUsluga.BorderRadius = 22;
-            this.guna2GradientButtonShowUsluga.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButtonShowUsluga.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButtonShowUsluga.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButtonShowUsluga.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButtonShowUsluga.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButtonShowUsluga.FillColor = System.Drawing.Color.DarkGreen;
-            this.guna2GradientButtonShowUsluga.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2GradientButtonShowUsluga.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2GradientButtonShowUsluga.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2GradientButtonShowUsluga.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButtonShowUsluga.Location = new System.Drawing.Point(647, 4);
-            this.guna2GradientButtonShowUsluga.Name = "guna2GradientButtonShowUsluga";
-            this.guna2GradientButtonShowUsluga.Size = new System.Drawing.Size(117, 47);
-            this.guna2GradientButtonShowUsluga.TabIndex = 29;
-            this.guna2GradientButtonShowUsluga.Text = "Закрыть";
-            this.guna2GradientButtonShowUsluga.Click += new System.EventHandler(this.guna2GradientButtonShowUsluga_Click);
             // 
             // labelName
             // 
@@ -212,11 +193,47 @@
             this.guna2GradientButtonZapis.Text = "Записаться";
             this.guna2GradientButtonZapis.Click += new System.EventHandler(this.guna2GradientButtonZapis_Click_1);
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2PictureBox1.Image = global::Diplomatia.Properties.Resources.icons8_закрыть_окно_64;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(866, -2);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(64, 52);
+            this.guna2PictureBox1.TabIndex = 33;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+            // 
+            // guna2GradientButtonShowUsluga
+            // 
+            this.guna2GradientButtonShowUsluga.AutoRoundedCorners = true;
+            this.guna2GradientButtonShowUsluga.BorderRadius = 22;
+            this.guna2GradientButtonShowUsluga.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButtonShowUsluga.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButtonShowUsluga.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButtonShowUsluga.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButtonShowUsluga.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButtonShowUsluga.FillColor = System.Drawing.Color.DarkGreen;
+            this.guna2GradientButtonShowUsluga.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2GradientButtonShowUsluga.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2GradientButtonShowUsluga.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2GradientButtonShowUsluga.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButtonShowUsluga.Location = new System.Drawing.Point(647, 4);
+            this.guna2GradientButtonShowUsluga.Name = "guna2GradientButtonShowUsluga";
+            this.guna2GradientButtonShowUsluga.Size = new System.Drawing.Size(117, 47);
+            this.guna2GradientButtonShowUsluga.TabIndex = 29;
+            this.guna2GradientButtonShowUsluga.Text = "Закрыть";
+            this.guna2GradientButtonShowUsluga.Visible = false;
+            this.guna2GradientButtonShowUsluga.Click += new System.EventHandler(this.guna2GradientButtonShowUsluga_Click);
+            // 
             // UslugaFor1Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(33)))), ((int)(((byte)(43)))));
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.guna2GradientButtonZapis);
             this.Controls.Add(this.guna2DateTimePickerBronUslug);
             this.Controls.Add(this.labelName);
@@ -230,8 +247,9 @@
             this.Controls.Add(this.gunaDiscrr);
             this.Controls.Add(this.guna2PictureBoxUsluga);
             this.Name = "UslugaFor1Control";
-            this.Size = new System.Drawing.Size(989, 565);
+            this.Size = new System.Drawing.Size(933, 561);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBoxUsluga)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,9 +264,10 @@
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label4;
-        public Guna.UI2.WinForms.Guna2GradientButton guna2GradientButtonShowUsluga;
         public Guna.UI2.WinForms.Guna2HtmlLabel labelName;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePickerBronUslug;
         public Guna.UI2.WinForms.Guna2GradientButton guna2GradientButtonZapis;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        public Guna.UI2.WinForms.Guna2GradientButton guna2GradientButtonShowUsluga;
     }
 }

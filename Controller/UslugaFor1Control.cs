@@ -150,6 +150,14 @@ namespace Diplomatia.Controller
 
             return bookedDates;
         }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+            if (this.Parent != null)
+            {
+                this.Parent.Controls.Remove(this);
+            }
+        }
     }
 }
 

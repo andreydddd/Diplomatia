@@ -22,9 +22,7 @@ namespace Diplomatia
             timer.Tick += Timer_Tick;
             timer.Start();
 
-            axWindowsMediaPlayer1.URL = @"E:\фотк\sunflower\vidi.mp4";
-            axWindowsMediaPlayer1.settings.volume = 0;
-            axWindowsMediaPlayer1.Ctlcontrols.play();
+            
         }
         private Timer timer;
         private void Timer_Tick(object sender, EventArgs e)
@@ -40,6 +38,11 @@ namespace Diplomatia
         }
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

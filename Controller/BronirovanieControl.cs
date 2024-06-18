@@ -33,22 +33,17 @@ namespace Diplomatia.Controller
         private void guna2GradientButtonCreatePrice_Click(object sender, EventArgs e)
         {
             guna2GradientButton1.Enabled = true;
-            // Обнуляем значение guna2TextBoxPrice перед началом нового расчета
             guna2TextBoxPrice.Text = "0";
 
-            // Получаем значение из guna2ComboBoxType
             string typeText = guna2ComboBoxType.SelectedItem.ToString();
 
-            // Получаем количество гостей из guna2TextBoxCountGuest
             int countGuest;
             if (!int.TryParse(guna2TextBoxCountGuest.Text, out countGuest))
             {
-                // Если введено некорректное значение, выводим сообщение об ошибке
                 MessageBox.Show("Введите корректное количество гостей", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Проверяем максимальное количество гостей для выбранного типа номера
             int maxGuests;
             switch (typeText)
             {
@@ -62,20 +57,16 @@ namespace Diplomatia.Controller
                     maxGuests = 6;
                     break;
                 default:
-                    // Если тип не определен, выводим сообщение об ошибке
                     MessageBox.Show("Выберите тип номера", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
             }
 
-            // Проверяем, не превышает ли введенное количество гостей максимальное
             if (countGuest > maxGuests)
             {
-                // Если количество гостей превышает максимальное, выводим сообщение об ошибке
                 MessageBox.Show($"Максимальное количество гостей для типа номера {typeText} - {maxGuests}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Вычисляем цену за гостя в зависимости от введенного типа
             int pricePerGuest;
             switch (typeText)
             {
@@ -89,35 +80,28 @@ namespace Diplomatia.Controller
                     pricePerGuest = 7500;
                     break;
                 default:
-                    // Если тип не определен, выводим сообщение об ошибке
                     MessageBox.Show("Выберите тип номера", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
             }
 
-            // Получаем выбранные даты начала и конца проживания
             DateTime dateStart = monthCalendarBron.SelectionStart;
             DateTime dateEnd = monthCalendarBron.SelectionEnd;
 
-            // Вычисляем количество выбранных дней
             int selectedDays = (int)(dateEnd - dateStart).TotalDays + 1;
 
-            // Проверяем, чтобы дата окончания была после даты начала
             if (selectedDays < 1)
             {
                 MessageBox.Show("Выберите корректные даты проживания", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Вычисляем стоимость за первый день
             int totalPrice = countGuest * pricePerGuest;
 
-            // Если выбраны более одного дня, добавляем 2000 за каждый день после первого
             if (selectedDays > 1)
             {
                 totalPrice += 2000 * (selectedDays - 1);
             }
 
-            // Устанавливаем значение в guna2TextBoxPrice
             guna2TextBoxPrice.Text = totalPrice.ToString();
         }
 
@@ -128,12 +112,10 @@ namespace Diplomatia.Controller
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             var nomId = guna2ComboBoxNumber.SelectedItem.ToString();
-         //  var guestId = guna2ComboBoxPassport.SelectedItem.ToString();  
             var guestId = guna2TextBoxGuest.Text;
             var countGuest = guna2TextBoxCountGuest.Text;
             var price = guna2TextBoxPrice.Text;
 
-            // Получаем выбранные даты из monthCalendarBron
             DateTime dateStart = monthCalendarBron.SelectionStart;
             DateTime dateEnd = monthCalendarBron.SelectionEnd;
 
@@ -166,7 +148,6 @@ namespace Diplomatia.Controller
                 dataBases.closeConnection();
             }
 
-            // Если бронирование не найдено, продолжаем с созданием новой записи
             string addBookingQuery = $"INSERT INTO bronirovanie (nomer_id, guest_id, count_chel, summar, date_start, date_end) " +
                                      $"VALUES ('{nomId}', '{guestId}', '{countGuest}', '{price}', '{dateStart:yyyy-MM-dd}', '{dateEnd:yyyy-MM-dd}')";
 
@@ -202,13 +183,10 @@ namespace Diplomatia.Controller
                 string selectedType = guna2ComboBoxType.SelectedItem.ToString();
                 if (selectedType == "Стандарт" || selectedType == "Комфорт" || selectedType == "Люкс")
                 {
-                    // Если тип номера выбран из списка, разрешаем доступ к guna2ComboBoxNumber
                     guna2ComboBoxNumber.Enabled = true;
 
-                    // Очищаем список номеров
                     guna2ComboBoxNumber.Items.Clear();
 
-                    // Добавляем соответствующие номера в список в зависимости от выбранного типа
                     switch (selectedType)
                     {
                         case "Стандарт":
@@ -226,7 +204,6 @@ namespace Diplomatia.Controller
                 }
                 else
                 {
-                    // Если выбрано неправильное значение, блокируем доступ к guna2ComboBoxNumber
                     guna2ComboBoxNumber.Enabled = false;
                 }
             }

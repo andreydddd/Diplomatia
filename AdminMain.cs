@@ -28,16 +28,19 @@ namespace Diplomatia
         private void PrintListUserAdmin(UserrControl userControl)
         {
             dataBases.OpenConnection();
-            SqlCommand sqlCommand = new SqlCommand("select * from [guest]", dataBases.getConnection());
+            SqlCommand sqlCommand = new SqlCommand("select * from [bronirovanie]", dataBases.getConnection());
             SqlDataReader reader = sqlCommand.ExecuteReader();
             userControl.flowLayoutPanel1.Controls.Clear();
             int userCount = 0;
             while (reader.Read())
             {
                 EIUserControl item = new EIUserControl();
-                item.labelFio.Text += reader[1].ToString();
-                item.labelPhone.Text += reader[2].ToString();
-                item.labelPassport.Text += reader[3].ToString();
+                item.gunaName.Text += reader[2].ToString();
+                item.gunaNomer.Text += reader[1].ToString();
+                item.gunaDateStart.Text = reader.GetDateTime(3).ToString("yyyy-MM-dd");
+                item.gunaDateEnd.Text = reader.GetDateTime(4).ToString("yyyy-MM-dd");
+                item.gunaCount.Text = reader[5].ToString();
+                item.gunaPrice.Text = reader[6].ToString();
 
                 userControl.flowLayoutPanel1.Controls.Add(item);
                 userCount++;
@@ -96,7 +99,7 @@ namespace Diplomatia
         {
             UserrControl userrControl = new UserrControl();
             userrControl.Location = new System.Drawing.Point(265, -6);
-            userrControl.Size = new System.Drawing.Size(738, 538);
+            userrControl.Size = new System.Drawing.Size(751, 537);
             this.Controls.Add(userrControl);
             userrControl.BringToFront();
 

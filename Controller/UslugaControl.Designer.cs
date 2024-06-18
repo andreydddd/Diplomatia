@@ -211,6 +211,7 @@
             this.guna2GradientButton1.Size = new System.Drawing.Size(209, 63);
             this.guna2GradientButton1.TabIndex = 36;
             this.guna2GradientButton1.Text = "Добавить фото";
+            this.guna2GradientButton1.Visible = false;
             this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
             // guna2GradientButton2

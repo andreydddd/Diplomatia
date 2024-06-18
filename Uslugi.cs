@@ -94,7 +94,7 @@ namespace Diplomatia
             {
                 UslugaFor1Control uslugaDetailControl = new UslugaFor1Control(uslugaId); // Передаем uslugaId в конструктор
                 uslugaDetailControl.Location = new Point(0, 188);
-                uslugaDetailControl.Size = new Size(980, 555);
+                uslugaDetailControl.Size = new Size(933, 561);
 
                 if (!reader.IsDBNull(reader.GetOrdinal("image_uslugi")))
                 {
